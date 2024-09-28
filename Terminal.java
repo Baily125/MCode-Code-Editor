@@ -15,37 +15,32 @@ public class Terminal {
     public Terminal(JFrame frame) {
         currentPath = System.getProperty("user.dir");
 
-        // Główne panel z BorderLayout
         JPanel panel = new JPanel(new BorderLayout());
         
-        // Ustawienia etykiety "Terminal"
         JLabel label = new JLabel("Terminal");
-        label.setForeground(Color.WHITE); // Ciemny motyw tekstu
+        label.setForeground(Color.WHITE);
         panel.add(label, BorderLayout.NORTH);
 
-        // Ustawienia obszaru tekstowego (terminala)
         textArea = new JTextArea();
         textArea.setEditable(false);
         textArea.setPreferredSize(new Dimension(600, 200));
-        textArea.setBackground(new Color(30, 30, 30)); // Ciemny kolor tła
-        textArea.setForeground(new Color(200, 200, 200)); // Jasny kolor tekstu
-        textArea.setFont(new Font("Monospaced", Font.PLAIN, 14)); // Ustawienie czcionki typu monospaced
+        textArea.setBackground(new Color(30, 30, 30)); 
+        textArea.setForeground(new Color(200, 200, 200)); 
+        textArea.setFont(new Font("Monospaced", Font.PLAIN, 14));
 
-        // Dodanie paska przewijania do terminala
         JScrollPane scrollPane = new JScrollPane(textArea);
-        scrollPane.setBorder(BorderFactory.createEmptyBorder()); // Usuń ramkę
+        scrollPane.setBorder(BorderFactory.createEmptyBorder()); 
         panel.add(scrollPane, BorderLayout.CENTER);
 
-        // Ustawienia pola tekstowego do wprowadzania komend
         commandField = new JTextField();
-        commandField.setBackground(new Color(20, 20, 20)); // Ciemne tło pola tekstowego
-        commandField.setForeground(new Color(230, 230, 230)); // Jasny kolor tekstu
-        commandField.setCaretColor(Color.WHITE); // Kolor kursora
-        commandField.setBorder(BorderFactory.createLineBorder(new Color(70, 70, 70))); // Delikatna ramka
-        commandField.setFont(new Font("Monospaced", Font.PLAIN, 14)); // Ustawienie czcionki typu monospaced
+        commandField.setBackground(new Color(20, 20, 20)); 
+        commandField.setForeground(new Color(230, 230, 230)); 
+        commandField.setCaretColor(Color.WHITE); 
+        commandField.setBorder(BorderFactory.createLineBorder(new Color(70, 70, 70))); 
+        commandField.setFont(new Font("Monospaced", Font.PLAIN, 14)); 
         panel.add(commandField, BorderLayout.SOUTH);
 
-        // Obsługa polecenia po naciśnięciu Enter
+
         commandField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -55,11 +50,10 @@ public class Terminal {
             }
         });
 
-        // Dodanie panelu terminala do okna
-        panel.setBackground(new Color(40, 40, 40)); // Ciemne tło panelu
+        panel.setBackground(new Color(40, 40, 40)); 
         frame.add(panel, BorderLayout.SOUTH);
         
-        displayPrompt(); // Wyświetlenie prompta na starcie
+        displayPrompt(); /
     }
 
     private void displayPrompt() {
