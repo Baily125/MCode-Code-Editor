@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/Baily125/MCode-Code-Editor/master/media/icon.png" alt="MCode Icon" width="256" height="256" />
 
-MCode Code Editor to nowoczesny, minimalistyczny edytor kodu, zaprojektowany z myślą o programistach, którzy cenią sobie prostotę oraz intuicyjny interfejs użytkownika. Edytor ten wspiera Python, oferując niezbędne funkcje do efektywnego tworzenia kodu.
+<p style="color: red; font-weight: bold;">MCode Code Editor</p> to nowoczesny, minimalistyczny edytor kodu, zaprojektowany z myślą o programistach, którzy cenią sobie prostotę oraz intuicyjny interfejs użytkownika. Edytor ten wspiera Python, oferując niezbędne funkcje do efektywnego tworzenia kodu.
 
 ## Funkcje
 
