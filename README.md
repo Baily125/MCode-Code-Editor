@@ -1,4 +1,4 @@
-# MCode Code Editor
+# MCode Code Editor v1.0.0
 
 MCode Code Editor to nowoczesny, minimalistyczny edytor kodu, zaprojektowany z myślą o programistach, którzy cenią sobie prostotę oraz intuicyjny interfejs użytkownika. Edytor ten wspiera Python, oferując niezbędne funkcje do efektywnego tworzenia kodu.
 
