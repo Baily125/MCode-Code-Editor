@@ -48,15 +48,13 @@ public class TextPanel {
     public TextPanel(JFrame frame) {
         JPanel mainPanel = new JPanel(new BorderLayout());
 
-        // Stylizacja JTextPane (tekst)
         textPane = new JTextPane();
         textPane.setFont(new Font("Consolas", Font.PLAIN, 16));  
         textPane.setMargin(new Insets(5, 5, 5, 5));
-        textPane.setBackground(new Color(30, 30, 30)); // Ciemne tło
-        textPane.setForeground(new Color(230, 230, 230)); // Jasny tekst
-        textPane.setCaretColor(Color.WHITE); // Kolor kursora
+        textPane.setBackground(new Color(30, 30, 30)); 
+        textPane.setForeground(new Color(230, 230, 230));
+        textPane.setCaretColor(Color.WHITE); 
 
-        // Popup Menu dla opcji edycji (Copy, Cut, Paste)
         JPopupMenu popupMenu = new JPopupMenu();
         JMenuItem copyItem = new JMenuItem("Copy");
         JMenuItem cutItem = new JMenuItem("Cut");
@@ -93,13 +91,12 @@ public class TextPanel {
 
         JScrollPane textScrollPane = new JScrollPane(textPane);
         textScrollPane.setBorder(BorderFactory.createEmptyBorder());  
-
-        // Stylizacja JTextArea dla numerów linii
+i
         lineNumberArea = new JTextArea("1");
         lineNumberArea.setEditable(false);
         lineNumberArea.setFont(textPane.getFont());
-        lineNumberArea.setBackground(new Color(45, 45, 45)); // Ciemne tło dla numerów linii
-        lineNumberArea.setForeground(new Color(200, 200, 200)); // Jasny tekst dla numerów linii
+        lineNumberArea.setBackground(new Color(45, 45, 45)); 
+        lineNumberArea.setForeground(new Color(200, 200, 200)); 
         lineNumberArea.setBorder(BorderFactory.createEmptyBorder());
         lineNumberArea.setMargin(new Insets(5, 5, 5, 5));
 
@@ -145,7 +142,6 @@ public class TextPanel {
         textVerticalScrollBar.addAdjustmentListener(e -> lineNumberVerticalScrollBar.setValue(textVerticalScrollBar.getValue()));
     }
 
-    // Funkcja podświetlająca składnię
     public static void highlightSyntax(JTextPane textPane) {
         StyledDocument doc = textPane.getStyledDocument();
         StyleContext context = StyleContext.getDefaultStyleContext();
