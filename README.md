@@ -18,4 +18,4 @@ Aby zainstalować MCode Code Editor, wykonaj poniższe kroki:
 
 1. Sklonuj repozytorium:
    ```bash
-   git clone https://github.com/uzytkownik/MCode-Code-Editor.git
+   git clone https://github.com/Baily125/MCode-Code-Editor.git
