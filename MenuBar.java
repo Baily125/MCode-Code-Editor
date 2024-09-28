@@ -3,37 +3,33 @@ import java.awt.event.*;
 import java.io.*;
 
 public class MenuBar {
-    private JTextPane textPane;  // Odniesienie do JTextPane
+    private JTextPane textPane; 
 
     public MenuBar(JFrame frame, TextPanel textPanel) {
-        this.textPane = textPanel.getTextPane();  // Inicjalizacja JTextPane z TextPanel
+        this.textPane = textPanel.getTextPane(); 
 
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
 
-        // Dodaj przycisk New
         JMenuItem newFileButton = new JMenuItem("New");
         newFileButton.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_DOWN_MASK));
 
-        // Dodaj przycisk Open
         JMenuItem openButton = new JMenuItem("Open");
         openButton.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, KeyEvent.CTRL_DOWN_MASK));
         openButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                openFile();  // Wywołanie metody openFile
+                openFile();  
             }
         });
 
-        // Dodaj przycisk Save
         JMenuItem saveButton = new JMenuItem("Save");
         saveButton.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.CTRL_DOWN_MASK));
         saveButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                saveFile();  // Wywołanie metody saveFile
+                saveFile();  
             }
         });
 
-        // Dodaj przycisk Save As
         JMenuItem saveAsButton = new JMenuItem("Save As");
         saveAsButton.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.CTRL_DOWN_MASK | KeyEvent.SHIFT_DOWN_MASK));
 
@@ -43,7 +39,6 @@ public class MenuBar {
         fileMenu.add(saveButton);
         fileMenu.add(saveAsButton);
 
-        // Dodaj menu do menuBar i ustaw w JFrame
         menuBar.add(fileMenu);
         frame.setJMenuBar(menuBar);
     }
@@ -52,17 +47,15 @@ public class MenuBar {
         JFileChooser fileChooser = new JFileChooser();
         int returnValue = fileChooser.showOpenDialog(null);
 
-        // Jeśli użytkownik wybrał plik
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
             try (BufferedReader br = new BufferedReader(new FileReader(selectedFile))) {
                 // Oczyszczenie tekstu w JTextPane
                 textPane.setText("");
 
-                // Odczytywanie pliku linia po linii
                 String line;
                 while ((line = br.readLine()) != null) {
-                    textPane.setText(textPane.getText() + line + "\n");  // Użycie setText z append
+                    textPane.setText(textPane.getText() + line + "\n"); 
                 }
             } catch (IOException ex) {
                 ex.printStackTrace();
